@@ -1,0 +1,45 @@
+.home {
+  .menu-list {
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    .ant-menu {
+      height: 100%;
+    }
+  }
+  .home-header {
+    margin-left: 180px;
+    transition: all 0.3s;
+    &.menu-unfold {
+      margin-left: 80px;
+    }
+    .header-nav{
+      padding: 0 20px;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #eee;
+      .breadcrumb {
+        display: inline-block;
+        margin-left: 20px;
+        margin-left: 20px;
+      }
+      .user-info {
+        right: 30px;
+        top: 0;
+        z-index: 1;
+        background-color: #fff;
+        position: absolute;
+        text-align: center;
+        cursor: pointer;
+        li:not(:first-child) {
+          display: none;
+        }
+        &:hover {
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
