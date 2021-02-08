@@ -92,7 +92,7 @@ const router = new VueRouter({
 let isAddRoute = false;
 // 如果去的页面的不是登录页面  判断是否是登录状态 使用store中的值是否为空
 router.beforeEach((to, from, next) => {
-  if (to.path !== '/login') {
+  if (to.path !== '/login'&&to.path!=='/register'&&to.path!=='/forget') {
     if (store.state.userInfo.appkey && store.state.userInfo.username && store.state.userInfo.role) {
       if (!isAddRoute) {
         const menuRoutes = getMenuRoute(store.state.userInfo.role, ayncRoutes);
