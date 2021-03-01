@@ -1,28 +1,38 @@
   
 <template>
-  <ve-line :data="chartData" :settings="chartSettings"></ve-line>
+  <div id="main" style="width:100%;height:400px"></div>
 </template>
 
 <script>
-  export default {
-    data () {
-      this.chartSettings = {
-        stack: { '用户': ['访问用户', '下单用户'] },
-        area: true
-      }
-      return {
-        chartData: {
-          columns: ['日期', '访问用户', '下单用户', '下单率'],
-          rows: [
-            { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
-            { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
-            { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
-            { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
-            { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
-            { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
-          ]
-        }
+export default {
+  data() {
+    return {
+      myChart: '',
+      // 指定图表的配置项和数据
+      option: {
+        title: {
+          text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+          data: ['销量']
+        },
+        xAxis: {
+          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        },
+        yAxis: {},
+        series: [{
+          name: '销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20]
+        }]
       }
     }
+  },
+  mounted() {
+    this.myChart=this.$echarts.init(document.getElementById('main')).setOption(this.option)
+    // 使用刚指定的配置项和数据显示图表。
+   
   }
+}
 </script>

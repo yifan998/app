@@ -16,11 +16,11 @@ export default {
       key:new Date().getTime()//绑定key值 实现菜单栏根据route信息切换
     }
   },
-  watch:{
-    $route(){
-      this.key = new Date().getTime()
-    }
-  },
+  // watch:{
+  //   $route(){
+  //     this.key = new Date().getTime()
+  //   }
+  // },
   components: {
     homeHeader,
     sliderMenu

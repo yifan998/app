@@ -11,7 +11,7 @@
     <a-form-item>
       <a-input v-decorator="[
           'password',
-          { rules: [{ required: true, message: '密码格式3-8位数字加英文字母',pattern:/^[a-z0-9]{3,8}$/g}] },
+          { rules: [{ required: true, message: '密码格式3-8位数字加英文字母',pattern:/^[a-zA-Z0-9]{3,8}$/g}] },
         ]" type="password" placeholder="密码">
         <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
       </a-input>
